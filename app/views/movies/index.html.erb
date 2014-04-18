@@ -1,1 +1,28 @@
-Hello Movies
+<h1>Movies</h1>
+
+
+<ul>
+  <% movie = Movie.first %>
+  <li><%= movie["title"] %> </li>
+</ul>
+
+<ul>
+  <% movie = Movie.read(3) %>
+  <li><%= movie["title"] %> </li>
+</ul>
+
+
+<ul>
+  <% all_movies = Movie.read %>
+  <% all_movies.each do |flick| %>
+    <li><%= flick["title"] %></li>
+  <% end %>
+</ul>
+
+<ul>
+  <% all_movies = Movie.read %>
+  <% all_movies.each do |flick| %>
+    <li><%= flick["title"] %> (<%= flick["year"] %>)
+    </li>
+  <% end %>
+</ul>
